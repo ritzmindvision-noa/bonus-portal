@@ -1,26 +1,215 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Tailwind のベーススタイルより後に読み込まれるよう、ポータル用スタイルはここに記述 */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: transparent;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.portal-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url("/gift-bg.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  color: #f7f1df;
+  font-family: "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (min-width: 768px) {
+  .portal-page {
+    background-attachment: fixed;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.portal-header {
+  text-align: center;
+  padding: 3rem 1.25rem 2rem;
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+.portal-label {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Times New Roman", serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #d4af37;
+  margin-bottom: 1rem;
+}
+
+.portal-page .portal-title {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Times New Roman", serif;
+  font-size: clamp(1.875rem, 6vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  color: #d4af37;
+  margin: 0 0 1.25rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.portal-subtitle {
+  font-family: "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  font-size: 0.9375rem;
+  line-height: 2;
+  color: #f7f1df;
+  margin: 0;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+.portal-main {
+  flex: 1;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.25rem 3.5rem;
+}
+
+.bonus-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .bonus-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bonus-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+  }
+
+  .bonus-card:nth-child(1) {
+    grid-column: 1 / span 2;
+  }
+
+  .bonus-card:nth-child(2) {
+    grid-column: 3 / span 2;
+  }
+
+  .bonus-card:nth-child(3) {
+    grid-column: 5 / span 2;
+  }
+
+  .bonus-card:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  .bonus-card:nth-child(5) {
+    grid-column: 4 / span 2;
+  }
+}
+
+.portal-page .bonus-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 0.875rem;
+  padding: 2rem 1.75rem;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.portal-page .bonus-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.55);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.25),
+    0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.portal-page .bonus-card-number {
+  display: inline-block;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Times New Roman", serif;
+  font-size: 0.8125rem;
+  letter-spacing: 0.2em;
+  color: #d4af37;
+  margin-bottom: 1rem;
+}
+
+.portal-page .bonus-card-title {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Times New Roman", serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.04em;
+  color: #b8941f;
+  margin: 0 0 0.875rem;
+}
+
+.portal-page .bonus-card-description {
+  font-family: "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.9;
+  color: #5c4f3a;
+  margin: 0 0 1.75rem;
+  flex: 1;
+}
+
+.portal-page .bonus-card-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: auto;
+  padding: 0.875rem 1.5rem;
+  background: #d4af37;
+  color: #ffffff;
+  font-family: "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  border-radius: 9999px;
+  border: none;
+  box-shadow: 0 3px 10px rgba(185, 150, 47, 0.4);
+  transition: background 0.25s ease, gap 0.25s ease, box-shadow 0.25s ease;
+}
+
+.portal-page .bonus-card-button:hover {
+  background: #b9962f;
+  gap: 0.75rem;
+  box-shadow: 0 4px 14px rgba(185, 150, 47, 0.5);
+}
+
+.portal-page .bonus-card-arrow {
+  transition: transform 0.25s ease;
+}
+
+.portal-page .bonus-card-button:hover .bonus-card-arrow {
+  transform: translateX(2px);
+}
+
+.portal-footer {
+  text-align: center;
+  padding: 2rem 1.25rem;
+  font-family: "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  font-size: 0.75rem;
+  color: #f7f1df;
+  letter-spacing: 0.1em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.portal-footer p {
+  margin: 0;
 }
