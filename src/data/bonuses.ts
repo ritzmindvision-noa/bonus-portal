@@ -3,6 +3,7 @@ export type Bonus = {
   title: string;
   description: string;
   url: string;
+  buttonLabel?: string;
 };
 
 export const bonuses: Bonus[] = [
@@ -22,10 +23,10 @@ export const bonuses: Bonus[] = [
   },
   {
     id: 3,
-    title: "妻（夫）の機嫌が悪い！3つの処方箋",
+    title: "妻（夫）の機嫌が気になる夫（妻）の５つのタイプ診断",
     description:
-      "パートナーの機嫌に振り回されないための、3つの心の処方箋です。",
-    url: "https://bad-mood-seven.vercel.app/worksheet",
+      "パートナーの機嫌に振り回される自分のタイプが分かる診断テストです。",
+    url: "https://reaction-seven-theta.vercel.app/worksheet",
   },
   {
     id: 4,
@@ -40,5 +41,13 @@ export const bonuses: Bonus[] = [
     description:
       "男性から「会いたい」と言われる女性が手放した、7つの口癖を解説します。",
     url: "https://woman-rosy.vercel.app/worksheet",
+  },
+  {
+    id: 6,
+    title: "離婚の恐れはどこから？診断",
+    description:
+      "離婚への恐れがどこから来ているのかを整理し、自分の中にある不安のタイプを確認できる診断です。",
+    url: "https://fearofdivorce.vercel.app/worksheet",
+    buttonLabel: "診断をはじめる",
   },
 ];

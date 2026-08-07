@@ -6,7 +6,7 @@ export default function Home() {
     <div className="portal-page">
       <header className="portal-header">
         <p className="portal-label">Special Gift</p>
-        <h1 className="portal-title">５大特典プレゼント！</h1>
+        <h1 className="portal-title">６大特典プレゼント！</h1>
         <p className="portal-subtitle">
           お受け取りいただいた特典ワークは、こちらからいつでもご利用いただけます。
           <br className="hidden sm:inline" />

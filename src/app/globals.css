@@ -91,28 +91,8 @@ body {
 
 @media (min-width: 1024px) {
   .bonus-grid {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-  }
-
-  .bonus-card:nth-child(1) {
-    grid-column: 1 / span 2;
-  }
-
-  .bonus-card:nth-child(2) {
-    grid-column: 3 / span 2;
-  }
-
-  .bonus-card:nth-child(3) {
-    grid-column: 5 / span 2;
-  }
-
-  .bonus-card:nth-child(4) {
-    grid-column: 2 / span 2;
-  }
-
-  .bonus-card:nth-child(5) {
-    grid-column: 4 / span 2;
   }
 }
 

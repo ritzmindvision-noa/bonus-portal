@@ -16,7 +16,7 @@ export function BonusCard({ bonus }: BonusCardProps) {
         rel="noopener noreferrer"
         className="bonus-card-button"
       >
-        ワークをはじめる
+        {bonus.buttonLabel ?? "ワークをはじめる"}
         <span aria-hidden="true" className="bonus-card-arrow">
           →
         </span>
