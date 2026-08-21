@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "６大特典プレゼント！",
+  title: "７大特典プレゼント！",
   description:
     "お受け取りいただいた特典ワークへ、迷わずアクセスできる入口ページです。",
 };

@@ -50,4 +50,12 @@ export const bonuses: Bonus[] = [
     url: "https://fearofdivorce.vercel.app/worksheet",
     buttonLabel: "診断をはじめる",
   },
+  {
+    id: 7,
+    title: "コミュニケーションがうまくいかない５つのクセ診断",
+    description:
+      "言いたいことが伝わらない原因になっている、コミュニケーションの無意識のクセを確認できる診断です。",
+    url: "https://communication5type.vercel.app/worksheet",
+    buttonLabel: "診断をはじめる",
+  },
 ];
