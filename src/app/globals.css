@@ -98,14 +98,24 @@ body {
 }
 
 @media (min-width: 1024px) {
+  /* 6列ベースで各カード2列分 → 見た目は3列。下段の余りを中央寄せしやすくする */
   .bonus-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 2rem;
   }
 
-  /* 上段3・中段3・下段1（中央） */
+  .bonus-grid > * {
+    grid-column: span 2;
+  }
+
+  /* 最終行が1枚だけのとき中央寄せ（例: 7枚） */
   .bonus-grid > :last-child:nth-child(3n + 1) {
-    grid-column: 2;
+    grid-column: 3 / span 2;
+  }
+
+  /* 最終行が2枚のとき中央寄せ（例: 上段3・中段3・下段07・08） */
+  .bonus-grid > :nth-last-child(2):nth-child(3n + 1) {
+    grid-column: 2 / span 2;
   }
 }
 

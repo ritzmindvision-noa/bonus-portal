@@ -58,4 +58,12 @@ export const bonuses: Bonus[] = [
       "男性から「会いたい」と言われる女性が手放した、7つの口癖を解説します。",
     url: "https://woman-rosy.vercel.app/worksheet",
   },
+  {
+    id: 8,
+    title: "仕事では武器なのに、夫婦では凶器になる5つの強み診断",
+    description:
+      "仕事では強みとして発揮できている能力が、パートナーシップではなぜ逆効果になるのか。自分の強みの使い方のクセを確認できる診断です。",
+    url: "https://strengthtobomb.vercel.app",
+    buttonLabel: "診断をはじめる",
+  },
 ];
