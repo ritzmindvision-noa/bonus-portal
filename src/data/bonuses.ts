@@ -63,7 +63,7 @@ export const bonuses: Bonus[] = [
     title: "仕事では武器なのに、夫婦では凶器になる5つの強み診断",
     description:
       "仕事では強みとして発揮できている能力が、パートナーシップではなぜ逆効果になるのか。自分の強みの使い方のクセを確認できる診断です。",
-    url: "https://strengthtobomb.vercel.app",
+    url: "https://strengthtobomb.vercel.app/worksheet",
     buttonLabel: "診断をはじめる",
   },
 ];
